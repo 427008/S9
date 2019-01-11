@@ -1,0 +1,2 @@
+selenium==3.141
+# https://chromedriver.storage.googleapis.com/2.45/chromedriver_win32.zip
