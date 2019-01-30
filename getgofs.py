@@ -14,10 +14,16 @@ driver = webdriver.Chrome(executable_path=path, options=chromeOptions)
 base_url = r'http://s9bbt:57772/csp/sys/exp/_CSP.UI.Portal.'
 url = base_url + r'GlobalList.cls?$NAMESPACE=BBTWORK#'
 
-cache_globals = ['B1', 'B2', 'B11', 'B11S1', 'B59', 'BE1', 'BE5', 'BE7', 'BE7S1', 'BE70', 'BE70S1', 'BE23']
+cache_globals = ['B1', 'B2', 'B11', 'B11S1', 'B49S1', 'B49S2', 'B59', 'B65',
+                 'BE1', 'BE5', 'BE7', 'BE7S1', 'BE70', 'BE70S1', 'BE23']
+
+# cache_globals = ['B1nsi1', 'B1nsi3', 'B1nsi5', 'B1nsi9', 'B1nsi19', 'B1nsi42', 'B1nsi15']
+
+# cache_globals = ['', 'B12A144']
+
 for global_name in cache_globals:
     driver.get(url)
-    wait = WebDriverWait(driver, 3)
+    wait = WebDriverWait(driver, 5)
     lines_input = wait.until(EC.presence_of_element_located((By.ID, 'control_27')))
     lines_input.send_keys(Keys.BACKSPACE*5)
     lines_input.send_keys('1')
